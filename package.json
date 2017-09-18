@@ -1,16 +1,25 @@
 {
-    "name": "chat.io"
-  , "description": "example chat application with socket.io"
-  , "version": "0.0.1"
-  , "dependencies": {
-        "express": "2.5.5"
-      , "jade": "0.16.4"
-      , "stylus": "0.19.0"
-      , "nib": "0.2.0"
-      , "socket.io": "0.9.1-1"
-    }
-  , "engines": {
-    "node": "0.6.12",
-    "npm": "1.1.4"
+  "name": "bremertown_chat",
+  "version": "0.0.1",
+  "description": "Chat online for Bremerton, WA",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nothingworksright/bremertown_chat.git"
+  },
+  "engines": {
+    "node": "8.3.0"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "express": "4.15.4",
+    "helmet": "3.8.1",
+    "nib": "1.1.2",
+    "pug": "2.0.0-rc.4",
+    "socket.io": "2.0.3",
+    "stylus": "0.54.5"
+  },
+  "scripts": {
+    "postinstall": "npm shrinkwrap --dev",
+    "start": "node app.js"
   }
 }
