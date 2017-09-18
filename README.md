@@ -1,12 +1,3 @@
-# Socket.IO chat example for Heroku
+# 💬 Bremertown Chat  
 
-Config updated to run on heroku, and transport set to xhr-polling with a 20s timeout
-
-You can see it in action at: http://socket-io-chat.herokuapp.com/
-
-## Deploying
-
-    heroku create -s cedar
-    git push heroku master
-
-Enjoy!
+Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-chat-heroku)  
