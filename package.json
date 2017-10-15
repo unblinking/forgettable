@@ -13,10 +13,8 @@
   "dependencies": {
     "express": "4.15.4",
     "helmet": "3.8.1",
-    "nib": "1.1.2",
     "pug": "2.0.0-rc.4",
-    "socket.io": "2.0.3",
-    "stylus": "0.54.5"
+    "socket.io": "2.0.3"
   },
   "scripts": {
     "postinstall": "npm shrinkwrap --dev",

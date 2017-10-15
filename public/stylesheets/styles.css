@@ -1,0 +1,47 @@
+
+#blank {
+  background: black; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(black, lightgreen); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, lightgreen); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, lightgreen); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, lightgreen); /* Standard syntax */
+}
+
+#signin {
+  background: lightgreen;
+}
+
+#nickname-err,
+#containedChat {
+  display: none;
+}
+
+#lines {
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, lightgreen); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, lightgreen); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, lightgreen); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, lightgreen); /* Standard syntax */
+}
+
+#compose {
+  background: lightgreen;
+}
+
+#lines em {
+  text-shadow: 0 1px 0 #fff;
+  color: #999;
+}
+#lines p {
+  padding: 0;
+  margin: 0;
+  padding: 5px 10px;
+  outline: 10px black;
+}
+#lines p b {
+  display: inline-block;
+  padding-right: 10px;
+}
+#lines p:nth-child(even) {
+  background: rgba(100, 255, 100, .2)
+}
