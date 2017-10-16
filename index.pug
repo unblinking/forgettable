@@ -5,7 +5,7 @@ html.m-0.p-0
       name='viewport',
       content='width=device-width, initial-scale=1'
     )
-    title='Bremertown'
+    title='💬 Bremertown'
     link(href='/stylesheets/styles.css', rel='stylesheet')
     link(
       rel='stylesheet',
@@ -18,7 +18,7 @@ html.m-0.p-0
       .m-0.p-0#aboveSignIn
       .m-0.p-0#signIn
         form.m-0.p-1#set-nickname
-          input.form-control#nick(placeholder='nickname')
+          input.form-control#nick(placeholder='nickname', autocomplete="on")
           small.form-text.text-primary
             |Type your nickname here and press enter.
           b.text-danger#nickname-err
@@ -27,7 +27,7 @@ html.m-0.p-0
       .m-0.p-0#history
       .m-0.p-0#compose
         form.m-0.p-1#send-message
-          input.form-control#message(placeholder='message')
+          input.form-control#message(placeholder='message …', autocomplete="off")
           small.form-text.text-primary
             |Type your message here and press enter.
 

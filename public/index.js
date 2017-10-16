@@ -1,26 +1,15 @@
 var socket = io.connect()
 
-function message (from, msg) {
-  $('#history').append($('<p>').append($('<b>').text(from), msg))
-  $('#history').get(0).scrollTop = 10000000
+/**
+ * Reset the message input field and focus the cursor there.
+ */
+function clear () {
+  $('#message').val('').focus()
 }
 
-socket.on('announcement', function (msg) {
-  $('#history').append($('<p>').append($('<em>').text(msg)))
-})
-socket.on('reconnect', function () {
-  message('😌', 'Reconnected to the server')
-  resetNickname()
-
-})
-socket.on('reconnecting', function () {
-  message('😧', 'Attempting to re-connect to the server')
-})
-socket.on('error', function (e) {
-  message('😨', e ? e : 'A unknown error occurred')
-})
-socket.on('user message', message)
-
+/**
+ * Set the user's nickname.
+ */
 function setNickname () {
   let nickname = $('#nick').val()
   socket.emit('nickname', nickname, function (used) {
@@ -38,43 +27,67 @@ function setNickname () {
   return false
 }
 
+/**
+ * Reset the user's nickname, such as upon disconnected/reconnect.
+ */
 function resetNickname () {
   socket.emit('nickname', socket.nickname, function (used) {
     if (!used) { // if nickname wasn't already used
-      // alert('nickname reset successfully')
+      message('😎', 'Nickname recovered successfully')
     } else { // nickname already used
-      // alert('nickname already in use')
       window.location.reload()
     }
   })
   return false
 }
 
-$(function () {
+/**
+ * Append a message to the chat history.
+ */
+function message (from, msg) {
+  $('#history').append($('<p>').append($('<b>').text(from), msg))
+  $('#history').get(0).scrollTop = 10000000
+}
 
-  // https://cmsdk.com/css3/css-100vh-is-too-tall-on-mobile-due-to-browser-ui.html
-  window.onresize = function () {
-    $('#containedSignIn').height($(window).height())
-    $('#aboveSignIn').height($(window).height() - $('#signIn').height())
-    $('#containedChat').height($(window).height())
-    $('#history').height($(window).height() - $('#compose').height())
-    $('#history').css('overflow-y', 'scroll')
-  }
-  window.onresize() // called to initially set the height.
+/**
+ * Resize elements properly when the window is resized.
+ */
+function windowResize () {
+  $('#containedSignIn').height($(window).height())
+  $('#aboveSignIn').height($(window).height() - $('#signIn').height())
+  $('#containedChat').height($(window).height())
+  $('#history').height($(window).height() - $('#compose').height())
+  $('#history').css('overflow-x', 'hidden')
+  $('#history').css('overflow-y', 'scroll')
+}
 
+/**
+ * Some stuff to run when the page first loads.
+ */
+$(() => {
+  window.onresize = windowResize
+  window.onresize()
   $('#set-nickname').submit(setNickname)
-
   $('#send-message').submit(function () {
     message('me', $('#message').val())
     socket.emit('user message', $('#message').val())
     clear()
     return false
   })
-
-  function clear () {
-    $('#message').val('').focus()
-  }
-
   $('#nick').val('').focus()
-
 })
+
+socket.on('announcement', function (msg) {
+  $('#history').append($('<p>').append($('<em>').text(msg)))
+})
+socket.on('reconnect', function () {
+  message('😌', 'Reconnected to the server')
+  resetNickname()
+})
+socket.on('reconnecting', function () {
+  message('😧', 'Disconnected. Attempting to reconnect …')
+})
+socket.on('error', function (e) {
+  message('😨', e ? e : 'A unknown error occurred')
+})
+socket.on('user message', message)
