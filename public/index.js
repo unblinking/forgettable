@@ -1,68 +1,73 @@
 var socket = io.connect()
 
 function message (from, msg) {
-  $('#lines').append($('<p>').append($('<b>').text(from), msg))
-  $('#lines').get(0).scrollTop = 10000000
+  $('#history').append($('<p>').append($('<b>').text(from), msg))
+  $('#history').get(0).scrollTop = 10000000
 }
 
 socket.on('announcement', function (msg) {
-  $('#lines').append($('<p>').append($('<em>').text(msg)))
+  $('#history').append($('<p>').append($('<em>').text(msg)))
 })
 socket.on('reconnect', function () {
-  message('System', 'Reconnected to the server')
+  message('😌', 'Reconnected to the server')
+  resetNickname()
+
 })
 socket.on('reconnecting', function () {
-  message('System', 'Attempting to re-connect to the server')
+  message('😧', 'Attempting to re-connect to the server')
 })
 socket.on('error', function (e) {
-  message('System', e ? e : 'A unknown error occurred')
+  message('😨', e ? e : 'A unknown error occurred')
 })
-/*
-socket.on('nicknames', function (nicknames) {
-  $('#nicknames').empty().append($('<span>Online: </span>'))
-  for (var i in nicknames) {
-    $('#nicknames').append($('<b>').text(nicknames[i]))
-  }
-})
-*/
 socket.on('user message', message)
+
+function setNickname () {
+  let nickname = $('#nick').val()
+  socket.emit('nickname', nickname, function (used) {
+    if (!used) { // if nickname wasn't already used
+      socket.nickname = nickname
+      $('#containedSignIn').css('display', 'none')
+      $('#containedChat').css('display', 'block')
+      window.onresize()
+      clear()
+    } else { // nickname already used
+      $('#nickname-err').css('display', 'block')
+      window.onresize()
+    }
+  })
+  return false
+}
+
+function resetNickname () {
+  socket.emit('nickname', socket.nickname, function (used) {
+    if (!used) { // if nickname wasn't already used
+      // alert('nickname reset successfully')
+    } else { // nickname already used
+      // alert('nickname already in use')
+      window.location.reload()
+    }
+  })
+  return false
+}
 
 $(function () {
 
   // https://cmsdk.com/css3/css-100vh-is-too-tall-on-mobile-due-to-browser-ui.html
   window.onresize = function () {
-
     $('#containedSignIn').height($(window).height())
-    $('#blank').height($(window).height() - $('#signin').height())
-
+    $('#aboveSignIn').height($(window).height() - $('#signIn').height())
     $('#containedChat').height($(window).height())
-    $('#lines').height($(window).height() - $('#compose').height())
-    $('#lines').css('overflow-y', 'scroll')
-
-
+    $('#history').height($(window).height() - $('#compose').height())
+    $('#history').css('overflow-y', 'scroll')
   }
   window.onresize() // called to initially set the height.
 
-  $('#set-nickname').submit(function () {
-    socket.emit('nickname', $('#nick').val(), function (used) {
-      if (!used) { // if nickname wasn't already used
-        $('#containedSignIn').css('display', 'none')
-        $('#containedChat').css('display', 'block')
-        window.onresize()
-        clear()
-      } else { // nickname already used
-        $('#nickname-err').css('display', 'block')
-        window.onresize()
-      }
-    })
-    return false
-  })
+  $('#set-nickname').submit(setNickname)
 
   $('#send-message').submit(function () {
     message('me', $('#message').val())
     socket.emit('user message', $('#message').val())
     clear()
-    // $('#lines').get(0).scrollTop = 10000000
     return false
   })
 

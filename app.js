@@ -102,13 +102,13 @@ function socketIoStuff(server) {
         } else {
           fn(false)
           nicknames[nick] = socket.nickname = nick
-          socket.broadcast.emit(`announcement`, `${nick} connected`)
+          socket.broadcast.emit(`announcement`, `${nick} joined`)
         }
       })
       socket.on(`disconnect`, function () {
         if (!socket.nickname) return
         delete nicknames[socket.nickname]
-        socket.broadcast.emit(`announcement`, `${socket.nickname} disconnected`)
+        socket.broadcast.emit(`announcement`, `${socket.nickname} left`)
       })
     })
     resolve()
