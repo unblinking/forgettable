@@ -15,21 +15,26 @@ html.m-0.p-0
     )
   body.m-0.p-0#body
     .m-0.p-0#containedSignIn
-      .m-0.p-0#blank
-      .m-0.p-0#signin
+      .m-0.p-0#aboveSignIn
+      .m-0.p-0#signIn
         form.m-0.p-1#set-nickname
           input.form-control#nick(placeholder='nickname')
           small.form-text.text-primary
-            |Enter your nickname and press enter.
-          .text-danger#nickname-err
-            |Nickname already in use, try something else.
+            |Type your nickname here and press enter.
+          b.text-danger#nickname-err
+            |Nickname already used, try another.
     .m-0.p-0#containedChat
-      .m-0.p-0#lines
+      .m-0.p-0#history
       .m-0.p-0#compose
         form.m-0.p-1#send-message
           input.form-control#message(placeholder='message')
           small.form-text.text-primary
-            |Enter your message and press enter.
+            |Type your message here and press enter.
+
+  noscript.noscript
+    h1.m-0.p-5#jswarning
+      |JavaScript must be enabled.
+
 
   script(
     src='https://code.jquery.com/jquery-3.2.1.slim.min.js',

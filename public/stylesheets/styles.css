@@ -1,5 +1,25 @@
+body {
+  position: relative;
+}
 
-#blank {
+.noscript {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  position: absolute;
+  top: 0px;
+}
+.noscript #jswarning {
+  display: block;
+  height: 100vh;
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(white, lightgreen); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(white, lightgreen); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(white, lightgreen); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, lightgreen); /* Standard syntax */
+}
+
+#aboveSignIn {
   background: black; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(black, lightgreen); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(black, lightgreen); /* For Opera 11.1 to 12.0 */
@@ -7,7 +27,7 @@
   background: linear-gradient(black, lightgreen); /* Standard syntax */
 }
 
-#signin {
+#signIn {
   background: lightgreen;
 }
 
@@ -16,7 +36,7 @@
   display: none;
 }
 
-#lines {
+#history {
   background: white; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(white, lightgreen); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(white, lightgreen); /* For Opera 11.1 to 12.0 */
@@ -28,20 +48,18 @@
   background: lightgreen;
 }
 
-#lines em {
-  text-shadow: 0 1px 0 #fff;
-  color: #999;
-}
-#lines p {
+#history p {
   padding: 0;
   margin: 0;
   padding: 5px 10px;
   outline: 10px black;
 }
-#lines p b {
+#history p b {
   display: inline-block;
   padding-right: 10px;
 }
-#lines p:nth-child(even) {
+#history p:nth-child(even) {
   background: rgba(100, 255, 100, .2)
 }
+
+
