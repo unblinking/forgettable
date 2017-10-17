@@ -19,5 +19,8 @@
   "scripts": {
     "postinstall": "npm shrinkwrap --dev",
     "start": "node app.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0"
   }
 }
