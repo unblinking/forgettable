@@ -1,3 +1,15 @@
+#!/usr/bin/env node
+
+'use strict'
+
+/**
+ * Bremertown Chatroom
+ * Super simple online chatroom.
+ * @author {@link https://github.com/jmg1138 jmg1138}
+ * Repo {@link https://github.com/nothingworksright/bremertown_chat Bremertown}
+ * Forked from {@link https://github.com/lstoll/socket-io-chat-heroku lstoll}
+ */
+
 /**
  * Module dependencies.
  */
@@ -21,6 +33,7 @@ function expressInstance () {
  * Configure the express.js application.
  * Define all express configurations here (except routes, define routes last).
  * @param {Object} express The expressjs instance.
+ *
  */
 function expressConfigure (express) {
   return new Promise(resolve => {
@@ -97,8 +110,8 @@ function socketIoStuff(server) {
         socket.broadcast.emit(`user message`, socket.nickname, msg)
       })
       socket.on(`nickname`, function (nick, fn) {
-        if (nicknames[nick]) { // if the nickname is already used
-          fn(true)
+        if (nicknames[nick]) {
+          fn(true) // Nickname already used.
         } else {
           fn(false)
           nicknames[nick] = socket.nickname = nick
