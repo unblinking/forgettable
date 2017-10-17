@@ -20,3 +20,4 @@ Bremertown is a super simple online chatroom. Enter a nickname and begin chattin
 
 ## Show Your Support  
 
+Please support this project by [making a pledge via Bountysource](https://salt.bountysource.com/checkout/amount?team=laughingstocks).  
