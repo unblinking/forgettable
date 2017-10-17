@@ -4,61 +4,97 @@ var socket = io.connect()
  * Reset the message input field and focus the cursor there.
  */
 function clear () {
-  $('#message').val('').focus()
+  $(`#message`).val(``).focus()
 }
 
 /**
- * Set the user's nickname.
+ * Set the user nickname.
  */
 function setNickname () {
-  let nickname = $('#nick').val()
-  socket.emit('nickname', nickname, function (used) {
-    if (!used) { // if nickname wasn't already used
+  let nickname = $(`#nick`).val()
+  socket.emit(`nickname`, nickname, function (used) {
+    if (used) {
+      $(`#nickname-err`).css(`display`, `block`)
+      window.onresize()
+    } else {
       socket.nickname = nickname
-      $('#containedSignIn').css('display', 'none')
-      $('#containedChat').css('display', 'block')
+      $(`#containedSignIn`).css(`display`, `none`)
+      $(`#containedChat`).css(`display`, `block`)
       window.onresize()
       clear()
-    } else { // nickname already used
-      $('#nickname-err').css('display', 'block')
-      window.onresize()
     }
   })
   return false
 }
 
 /**
- * Reset the user's nickname, such as upon disconnected/reconnect.
+ * Reset the user nickname, such as upon disconnected/reconnect.
  */
 function resetNickname () {
-  socket.emit('nickname', socket.nickname, function (used) {
-    if (!used) { // if nickname wasn't already used
-      message('😎', 'Nickname recovered successfully')
-    } else { // nickname already used
+  socket.emit(`nickname`, socket.nickname, function (used) {
+    if (used) {
       window.location.reload()
+    } else {
+      announcement(`😎 Nickname recovered successfully`)
     }
   })
-  return false
+}
+
+/**
+ * Appends an announcement to the chat history.
+ * @param {string} msg - The announcement text.
+ */
+function announcement (msg) {
+  $(`#history`).append($(`<p>`).text(msg))
+  $(`#history`).get(0).scrollTop = 10000000
+}
+
+/**
+ * Append my own new messages to the chat history.
+ */
+function myMessage (msg) {
+  $(`#history`).append(
+    $(`<p class="myLine">`).append(
+      $(`<span class="myMessage">`).text(msg)
+    )
+  )
+  $(`#history`).get(0).scrollTop = 10000000
 }
 
 /**
  * Append a message to the chat history.
  */
 function message (from, msg) {
-  $('#history').append($('<p>').append($('<b>').text(from), msg))
-  $('#history').get(0).scrollTop = 10000000
+  $(`#history`).append(
+    $(`<p>`).append(
+      $(`<span class="badge badge-pill badge-success mr-2">`).text(from),
+      msg
+    )
+  )
+  $(`#history`).get(0).scrollTop = 10000000
+}
+
+/**
+ * Send a user message to the chat server.
+ */
+function sendMessage () {
+  if ($(`#message`).val() !== ``) {
+    socket.emit(`user message`, $(`#message`).val())
+    myMessage($(`#message`).val())
+    clear()
+  }
+  
+  return false
 }
 
 /**
  * Resize elements properly when the window is resized.
  */
 function windowResize () {
-  $('#containedSignIn').height($(window).height())
-  $('#aboveSignIn').height($(window).height() - $('#signIn').height())
-  $('#containedChat').height($(window).height())
-  $('#history').height($(window).height() - $('#compose').height())
-  $('#history').css('overflow-x', 'hidden')
-  $('#history').css('overflow-y', 'scroll')
+  $(`#containedSignIn`).height($(window).height())
+  $(`#aboveSignIn`).height($(window).height() - $(`#signIn`).height())
+  $(`#containedChat`).height($(window).height())
+  $(`#history`).height($(window).height() - $(`#compose`).height())
 }
 
 /**
@@ -67,27 +103,55 @@ function windowResize () {
 $(() => {
   window.onresize = windowResize
   window.onresize()
-  $('#set-nickname').submit(setNickname)
-  $('#send-message').submit(function () {
-    message('me', $('#message').val())
-    socket.emit('user message', $('#message').val())
-    clear()
-    return false
-  })
-  $('#nick').val('').focus()
+  $(`#nick`).val(``).focus()
+  $(`#set-nickname`).submit(setNickname)
+  $(`#send-message`).submit(sendMessage)
 })
 
-socket.on('announcement', function (msg) {
-  $('#history').append($('<p>').append($('<em>').text(msg)))
+/**
+ * Socket.IO event listeners for built in events.
+ */
+socket.on(`connect`, () => {
+  announcement(`😃 Connected to the server`)
 })
-socket.on('reconnect', function () {
-  message('😌', 'Reconnected to the server')
+// socket.on(`connect_error`, err => {
+//   announcement(`😱 Connection error: ${err}`)
+// })
+socket.on(`connect_timeout`, () => {
+  announcement(`⌛ Connection timeout`)
+})
+// socket.on(`error`, e => {
+//   announcement(e ? e : `A unknown error occurred`)
+// })
+socket.on(`disconnect`, reason => {
+  announcement(`😱 Disconnected because ${reason}`)
+})
+socket.on(`reconnect`, attempt => {
+  announcement(`😌 Reconnected to the server after ${attempt} attempts`)
   resetNickname()
 })
-socket.on('reconnecting', function () {
-  message('😧', 'Disconnected. Attempting to reconnect …')
+// socket.on(`reconnect_attempt`, () => {
+//   announcement(`📡 Reconnection attempt`)
+// })
+socket.on(`reconnecting`, attempt => {
+  announcement(`😧 Disconnected, but reconnecting: ${attempt}`)
 })
-socket.on('error', function (e) {
-  message('😨', e ? e : 'A unknown error occurred')
+// socket.on(`reconnect_error`, err => {
+//   announcement(`😱 Reconnection error: ${err}`)
+// })
+socket.on(`reconnect_failed`, reconnectionAttempts => {
+  announcement(`😱 Reconnect failed. Could not reconnect in less than ${reconnectionAttempts} attempts.`)
 })
-socket.on('user message', message)
+// socket.on(`ping`, () => {
+//   announcement(`🏓 ping`)
+// })
+// socket.on(`pong`, ms => {
+//   announcement(`🏓 pong in ${ms}ms`)
+// })
+
+
+/**
+ * Socket.IO event listeners for custom events.
+ */
+socket.on(`announcement`, announcement)
+socket.on(`user message`, message)
