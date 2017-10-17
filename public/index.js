@@ -1,3 +1,11 @@
+/**
+ * Bremertown Chatroom
+ * Super simple online chatroom.
+ * @author {@link https://github.com/jmg1138 jmg1138}
+ * Repo {@link https://github.com/nothingworksright/bremertown_chat Bremertown}
+ * Forked from {@link https://github.com/lstoll/socket-io-chat-heroku lstoll}
+ */
+
 var socket = io.connect()
 
 /**
