@@ -17,7 +17,3 @@ Simply and easily deploy your own copy of this online chatroom to Heroku using t
 ## About  
 
 Bremertown is a super simple online chatroom. Enter a nickname and begin chatting instantly. No username and password or sign up process.  
-
-## Show Your Support  
-
-Please support this project by [making a pledge via Bountysource](https://salt.bountysource.com/checkout/amount?team=laughingstocks).  
