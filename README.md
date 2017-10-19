@@ -20,3 +20,8 @@ Bremertown is a super simple online chatroom. Enter a nickname and begin chattin
 
 ## Show Your Support  
 
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/nothingworksright/bremertown_chatroom/badge.svg?style=beer-square)](https://beerpay.io/nothingworksright/bremertown_chatroom)  [![Beerpay](https://beerpay.io/nothingworksright/bremertown_chatroom/make-wish.svg?style=flat-square)](https://beerpay.io/nothingworksright/bremertown_chatroom?focus=wish)
