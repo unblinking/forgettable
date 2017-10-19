@@ -1,26 +1,44 @@
 {
   "name": "bremertown_chat",
   "version": "0.0.1",
-  "description": "Chat online for Bremerton, WA",
+  "description": "Super simple online chatroom.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nothingworksright/bremertown_chat.git"
+    "url": "https://github.com/nothingworksright/bremertown_chatroom.git"
   },
+  "main": "app.js",
+  "author": "jmg1138 https://github.com/jmg1138",
+  "license": "MIT",
+  "readme": "README.md",
   "engines": {
     "node": "8.3.0"
   },
-  "main": "app.js",
   "dependencies": {
-    "express": "4.15.4",
-    "helmet": "3.8.1",
+    "express": "4.16.2",
+    "helmet": "3.9.0",
     "pug": "2.0.0-rc.4",
     "socket.io": "2.0.3"
   },
+  "devDependencies": {
+    "codecov": "2.3.1",
+    "env-test": "1.0.0",
+    "eslint": "^4.9.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.0",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "mocha": "4.0.1",
+    "npm-check-updates": "2.13.0",
+    "nyc": "11.2.1",
+    "should": "13.1.2"
+  },
   "scripts": {
     "postinstall": "npm shrinkwrap --dev",
+    "pretest": "echo \"Checking for available dependency updates\" && ncu",
+    "test": "nyc mocha --reporter dot",
+    "testonly": "nyc mocha --reporter spec",
+    "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "start": "node app.js"
-  },
-  "devDependencies": {
-    "eslint": "^4.9.0"
   }
 }

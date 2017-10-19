@@ -1,16 +1,18 @@
 # 💬 Bremertown  
 
 Super simple online chatroom.  
-
 Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-chat-heroku)  
+
+[![Build Status](https://travis-ci.org/nothingworksright/bremertown_chatroom.svg?branch=master)](https://travis-ci.org/nothingworksright/bremertown_chatroom)
+[![Maintainability](https://api.codeclimate.com/v1/badges/011d4387448b7971c24d/maintainability)](https://codeclimate.com/github/nothingworksright/bremertown_chatroom/maintainability)  
 
 ## Getting started  
 
 ### Use it right now  
 
-[Click here to open the Bremertown chatroom](http://www.bremertown.com)  
+👉 [Click here to open the Bremertown chatroom](http://www.bremertown.com) 👈  
 
-First you will need to enter a nickname, and then you'll be chatting.  
+Once the chatroom is loaded, just enter a nickname and you're chatting.  
 
 ### Deploy your own copy  
 
