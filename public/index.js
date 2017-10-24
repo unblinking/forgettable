@@ -6,6 +6,8 @@
  * Forked from {@link https://github.com/lstoll/socket-io-chat-heroku lstoll}
  */
 
+/*eslint-env jquery*/
+
 var socket = io.connect()
 
 /**
