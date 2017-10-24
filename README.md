@@ -1,6 +1,6 @@
 # 💬 Bremertown  
 
-Super simple online chatroom.  
+A super simple chatroom.  
 Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-chat-heroku)  
 
 [![Build Status](https://travis-ci.org/nothingworksright/bremertown_chatroom.svg?branch=master)](https://travis-ci.org/nothingworksright/bremertown_chatroom)
@@ -22,6 +22,8 @@ Simply and easily deploy your own copy of this online chatroom to Heroku using t
 ## About  
 
 Bremertown is a super simple online chatroom. Enter a nickname and begin chatting instantly. No password required, and no sign-up process.  
+
+Inspired by the city of [Bremerton, WA, USA](http://www.ci.bremerton.wa.us/), but open to everyone.  
 
 ## Show your support  
 

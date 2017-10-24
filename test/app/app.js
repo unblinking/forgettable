@@ -18,12 +18,12 @@ describe(`App.js (the main app script)`, async () => {
     const exit = process.exit
     process.env.APP_EXIT = `false`
     process.exit = () => { process.env.APP_EXIT = `true` }
-    // let unhook = intercept(txt => { return `` }) // Begin muting stdout.
+    let unhook = intercept(txt => { return `` }) // Begin muting stdout.
     const app = require(`../../app`)
     app.main()
     await setTimeoutPromise(3000) // Wait 3 seconds for the app to finish starting.
     process.env.APP_EXIT.should.equal(`false`)
-    // unhook() // Stop muting stdout.
+    unhook() // Stop muting stdout.
     process.exit = exit // Reset process.exit as it was.
     delete require.cache[require.resolve(`../../app`)]
     delete process.env.APP_EXIT
