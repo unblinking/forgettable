@@ -11,7 +11,7 @@
   "license": "MIT",
   "readme": "README.md",
   "engines": {
-    "node": "8.3.0"
+    "node": "8.4.0"
   },
   "dependencies": {
     "express": "4.16.2",
@@ -31,7 +31,6 @@
     "standard": "*"
   },
   "scripts": {
-    "postinstall": "npm shrinkwrap --dev",
     "pretest": "echo \"Checking for available dependency updates\" && ncu",
     "test": "standard && nyc mocha --reporter dot",
     "testonly": "nyc mocha --reporter spec",
