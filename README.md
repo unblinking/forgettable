@@ -11,7 +11,7 @@ Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-c
 
 ### Use it right now  
 
-[🎟 Click here to open the Bremertown chatroom](http://www.bremertown.com). Once the chatroom is loaded, just enter a nickname and you're chatting.  
+[👥 Click here to open the Bremertown chatroom](http://www.bremertown.com). Once the chatroom is loaded, just enter a nickname and you're chatting.  
 
 ### Deploy your own copy  
 
