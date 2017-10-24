@@ -4,7 +4,8 @@ Super simple online chatroom.
 Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-chat-heroku)  
 
 [![Build Status](https://travis-ci.org/nothingworksright/bremertown_chatroom.svg?branch=master)](https://travis-ci.org/nothingworksright/bremertown_chatroom)
-[![Maintainability](https://api.codeclimate.com/v1/badges/011d4387448b7971c24d/maintainability)](https://codeclimate.com/github/nothingworksright/bremertown_chatroom/maintainability)  
+[![Maintainability](https://api.codeclimate.com/v1/badges/011d4387448b7971c24d/maintainability)](https://codeclimate.com/github/nothingworksright/bremertown_chatroom/maintainability)
+[![codecov](https://codecov.io/gh/nothingworksright/bremertown_chatroom/branch/master/graph/badge.svg)](https://codecov.io/gh/nothingworksright/bremertown_chatroom)  
 
 ## Getting started  
 
