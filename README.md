@@ -1,18 +1,17 @@
 # 💬 Bremertown  
 
-Super simple online chatroom.  
+A super simple chatroom.  
 Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-chat-heroku)  
 
 [![Build Status](https://travis-ci.org/nothingworksright/bremertown_chatroom.svg?branch=master)](https://travis-ci.org/nothingworksright/bremertown_chatroom)
-[![Maintainability](https://api.codeclimate.com/v1/badges/011d4387448b7971c24d/maintainability)](https://codeclimate.com/github/nothingworksright/bremertown_chatroom/maintainability)  
+[![Maintainability](https://api.codeclimate.com/v1/badges/011d4387448b7971c24d/maintainability)](https://codeclimate.com/github/nothingworksright/bremertown_chatroom/maintainability)
+[![codecov](https://codecov.io/gh/nothingworksright/bremertown_chatroom/branch/master/graph/badge.svg)](https://codecov.io/gh/nothingworksright/bremertown_chatroom)  
 
 ## Getting started  
 
 ### Use it right now  
 
-👉 [Click here to open the Bremertown chatroom](http://www.bremertown.com) 👈  
-
-Once the chatroom is loaded, just enter a nickname and you're chatting.  
+Please **[open the Bremertown chatroom](http://www.bremertown.com)** and give it a try.  
 
 ### Deploy your own copy  
 
@@ -22,7 +21,9 @@ Simply and easily deploy your own copy of this online chatroom to Heroku using t
 
 ## About  
 
-Bremertown is a super simple online chatroom. Enter a nickname and begin chatting instantly. No username and password or sign up process.  
+Bremertown is a super simple online chatroom. Enter a nickname and begin chatting instantly. No password required, and no sign-up process.  
+
+Inspired by the city of [Bremerton, WA, USA](http://www.ci.bremerton.wa.us/), but open to everyone.  
 
 ## Show your support  
 

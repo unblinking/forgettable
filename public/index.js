@@ -7,6 +7,7 @@
  */
 
 /* eslint-env jquery */
+/* global io */
 
 var socket = io.connect()
 
