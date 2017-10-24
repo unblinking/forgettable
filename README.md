@@ -9,9 +9,9 @@ Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-c
 
 ## Getting started  
 
-### 👥 Use it right now  
+### Use it right now  
 
-[Click here to open the Bremertown chatroom](http://www.bremertown.com).  
+**[Open the Bremertown chatroom](http://www.bremertown.com)**.  
 
 ### Deploy your own copy  
 
