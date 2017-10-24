@@ -6,6 +6,8 @@
  * Forked from {@link https://github.com/lstoll/socket-io-chat-heroku lstoll}
  */
 
+/* eslint-env jquery */
+
 var socket = io.connect()
 
 /**
@@ -91,7 +93,6 @@ function sendMessage () {
     myMessage($(`#message`).val())
     clear()
   }
-  
   return false
 }
 
@@ -156,7 +157,6 @@ socket.on(`reconnect_failed`, reconnectionAttempts => {
 // socket.on(`pong`, ms => {
 //   announcement(`🏓 pong in ${ms}ms`)
 // })
-
 
 /**
  * Socket.IO event listeners for custom events.

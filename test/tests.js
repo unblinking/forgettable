@@ -9,13 +9,11 @@
  */
 
 describe(`Unit testing`, () => {
-  before(() => {
-    // any prep go here
-  })
   it(`should find that NODE_ENV has been set to test.`, () =>
     process.env.NODE_ENV.should.equal(`test`)
   )
   after(() => {
     // Unit tests, required in special order of execution.
+    require(`./app/app`)
   })
 })
