@@ -11,7 +11,7 @@ Forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll/socket-io-c
 
 ### Use it right now  
 
-**[Open the Bremertown chatroom](http://www.bremertown.com)**.  
+Please **[open the Bremertown chatroom](http://www.bremertown.com)** and give it a try.  
 
 ### Deploy your own copy  
 
