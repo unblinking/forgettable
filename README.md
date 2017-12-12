@@ -24,11 +24,3 @@ Simply and easily deploy your own copy of this online chatroom to Heroku using t
 Bremertown is a super simple online chatroom. Enter a nickname and begin chatting instantly. No password required, and no sign-up process.  
 
 Inspired by the city of [Bremerton, WA, USA](http://www.ci.bremerton.wa.us/), but open to everyone.  
-
-## Show your support  
-
-Support this open source project and motivate me to continue development. Using [Beerpay.io](https://beerpay.io/nothingworksright/bremertown_chatroom?focus=wish) you can send me support, and make a wish for a new feature or issue fix.  
-
-[Click here to show your support](https://beerpay.io/nothingworksright/bremertown_chatroom?focus=wish).  
-
-[![Beerpay](https://beerpay.io/nothingworksright/bremertown_chatroom/badge.svg?style=beer-square)](https://beerpay.io/nothingworksright/bremertown_chatroom)  [![Beerpay](https://beerpay.io/nothingworksright/bremertown_chatroom/make-wish.svg?style=flat-square)](https://beerpay.io/nothingworksright/bremertown_chatroom?focus=wish)  
