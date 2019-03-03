@@ -12,10 +12,3 @@ addons:
 branches:
   only:
   - master
-deploy:
-  provider: heroku
-  api_key:
-    secure: HTbiBOMqC6TZ4zo9IbZLGyD51MafliIbmxTIsjlLng/JIGWGpz0kf5lM/2bK6gHUv1GfbHmFm6Af+elThiSrRxOMev9oYJylpyuMJOvmYys/3ZWLpO1olGHs5fc5o7CUZ+M3qb8a7tj6lSyeIVuWEOnhpB7A7qV2vo31k//XkM6aUpMXYIWHUlYn7qDY4/LQH4a57S7yf0O0Te8AP3nF2atTNj0sojZJclPb3EpioRhQWkgGYELfn12Ruv7YASkoDUELQMSLBC/+uJNUEXK0ngG2ZkmSeV9TXXirnx+QOFnCiul3LuoVhsdcSfSA/+gaU2t/E/Nnhrbp0Fiy6Fb58VMKt8gnAdMhpAnaNbTESLNhtjIaMWcDhKln6vXFdMDGLU4de+qtDGJQFaKU6x1mJPNX1UXRDs3QMJd6pkVzAZjTltRikisQpdxDmJBjitj1s3m44mDkOVxMw3J6KlK1rB+o0t07AC+wA7p9o5pVHKxpoiFS8xFtke3y/6oKrH6/WMdGJf2wWuuvcct4uzdRVTqVvTXmXxHYeELDdU5HCLTTskSMJHvp9zkLskRd2A7QqcsvyDNcnCqMfjVG4fRGXApNBY1PW+GBQvcEl7zuYpYrWUJFFmEo3ATJRWKS460I8oBiK4zKC9qa3Z7hU5RsIC/nJYmmKi0BJTTB2KfZfuQ=
-  app: bremertown
-  on:
-    repo: nothingworksright/bremertown_chatroom
