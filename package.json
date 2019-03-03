@@ -31,6 +31,12 @@
     "should": "13.2.3",
     "standard": "*"
   },
+  "standard": {
+    "ignore": [
+        "/public/bootstrap.js",
+        "/public/jquery.js"
+    ]
+  },
   "scripts": {
     "pretest": "echo \"Checking for available dependency updates\" && ncu",
     "test": "standard && nyc mocha --reporter dot",
