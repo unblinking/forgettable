@@ -1,7 +1,7 @@
 {
-  "name": "bremertown_chat",
+  "name": "Bremertown",
   "version": "0.0.1",
-  "description": "Super simple online chatroom.",
+  "description": "Another chat.",
   "repository": {
     "type": "git",
     "url": "https://github.com/nothingworksright/bremertown_chatroom.git"
@@ -11,30 +11,41 @@
   "license": "MIT",
   "readme": "README.md",
   "engines": {
-    "node": "8.4.0"
+    "node": "10.15.2"
   },
   "dependencies": {
-    "express": "4.16.2",
-    "helmet": "3.9.0",
-    "pug": "2.0.0-rc.4",
-    "socket.io": "2.0.4"
+    "express": "4.16.4",
+    "he": "1.2.0",
+    "helmet": "3.15.1",
+    "pug": "2.0.3",
+    "socket.io": "2.2.0"
   },
   "devDependencies": {
-    "codecov": "3.0.0",
+    "codecov": "3.2.0",
     "env-test": "1.0.0",
-    "eslint": "4.9.0",
+    "eslint": "5.15.0",
     "intercept-stdout": "0.1.2",
-    "mocha": "3.5.0",
-    "npm-check-updates": "2.13.0",
-    "nyc": "11.2.1",
-    "should": "13.1.2",
+    "mocha": "6.0.2",
+    "mute": "2.0.6",
+    "npm-check-updates": "2.15.0",
+    "nyc": "13.3.0",
+    "should": "13.2.3",
     "standard": "*"
   },
+  "standard": {
+    "ignore": [
+        "/public/bootstrap.js",
+        "/public/jquery.js"
+    ]
+  },
   "scripts": {
+    "linter": "standard",
+    "fixer": "standard --fix",
     "pretest": "echo \"Checking for available dependency updates\" && ncu",
-    "test": "standard && nyc mocha --reporter dot",
-    "testonly": "nyc mocha --reporter spec",
+    "test": "standard && nyc mocha --reporter dot --exit",
+    "testonly": "nyc mocha --reporter spec --exit",
     "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "start": "node -e 'require(`./app`).main()'"
+    "develop": "node dev.js",
+    "start": "node app.js"
   }
 }

@@ -1,8 +1,5 @@
-// Bremertown Chatroom
-// Super simple online chatroom.
+// Bremertown - Another chat.
 // @author {@link https://github.com/jmg1138 jmg1138}
-// Repo {@link https://github.com/nothingworksright/bremertown_chatroom Bremertown}
-// Forked from {@link https://github.com/lstoll/socket-io-chat-heroku lstoll}
 
 doctype html
 html.m-0.p-0
@@ -13,12 +10,7 @@ html.m-0.p-0
     )
     title='💬 Bremertown'
     link(href='stylesheets/styles.css', rel='stylesheet')
-    link(
-      rel='stylesheet',
-      href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css',
-      integrity='sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M',
-      crossorigin='anonymous'
-    )
+    link(href='stylesheets/bootstrap.css', rel='stylesheet')
   body.m-0.p-0#body
     .m-0.p-0#containedSignIn
       .m-0.p-0#aboveSignIn
@@ -47,15 +39,7 @@ html.m-0.p-0
   noscript.noscript
     h1.m-0.p-5#jswarning
       |JavaScript must be enabled.
-  script(
-    src='https://code.jquery.com/jquery-3.2.1.slim.min.js',
-    integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN',
-    crossorigin='anonymous'
-  )
-  script(
-    src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js',
-    integrity='sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1',
-    crossorigin='anonymous'
-  )
+  script(src='/jquery.js')
+  script(src='/bootstrap.js')
   script(src='/socket.io/socket.io.js')
   script(src='/index.js')

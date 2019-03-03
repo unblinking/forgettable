@@ -2,3 +2,4 @@
 --require should
 --ui bdd
 --timeout 20000
+--exit

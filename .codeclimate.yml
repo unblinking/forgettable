@@ -20,3 +20,5 @@ ratings:
 exclude_paths:
 - "test"
 - "LICENSE"
+- "bootstrap.js"
+- "jquery.js"
