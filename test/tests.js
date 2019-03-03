@@ -15,5 +15,6 @@ describe(`Unit testing`, () => {
   after(() => {
     // Unit tests, required in special order of execution.
     require(`./app/app`)
+    require(`./lib/errors`)
   })
 })

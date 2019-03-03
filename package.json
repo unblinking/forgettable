@@ -26,6 +26,7 @@
     "eslint": "5.15.0",
     "intercept-stdout": "0.1.2",
     "mocha": "6.0.2",
+    "mute": "2.0.6",
     "npm-check-updates": "2.15.0",
     "nyc": "13.3.0",
     "should": "13.2.3",
@@ -38,10 +39,13 @@
     ]
   },
   "scripts": {
+    "linter": "standard",
+    "fixer": "standard --fix",
     "pretest": "echo \"Checking for available dependency updates\" && ncu",
-    "test": "standard && nyc mocha --reporter dot",
-    "testonly": "nyc mocha --reporter spec",
+    "test": "standard && nyc mocha --reporter dot --exit",
+    "testonly": "nyc mocha --reporter spec --exit",
     "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "start": "node -e 'require(`./app`).main()'"
+    "develop": "node dev.js",
+    "start": "node app.js"
   }
 }
