@@ -1,13 +1,13 @@
 {
   "name": "Bremertown",
-  "description": "Super simple online chatroom.",
+  "description": "Another chat.",
   "keywords": [
     "Bremertown",
     "Bremerton",
     "chat",
     "chatroom"
   ],
-  "website": "https://github.com/nothingworksright/bremertown_chat/blob/master/README.md",
-  "repository": "https://github.com/nothingworksright/bremertown_chat",
+  "website": "https://github.com/nothingworksright/bremertown_chatroom/blob/master/README.md",
+  "repository": "https://github.com/nothingworksright/bremertown_chatroom",
   "success_url": "/"
 }

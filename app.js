@@ -3,20 +3,14 @@
 'use strict'
 
 /**
- * Bremertown Chatroom
- * Super simple online chatroom.
+ * Bremertown - Another chat.
  * @author {@link https://github.com/jmg1138 jmg1138}
- * Repo {@link https://github.com/nothingworksright/bremertown_chatroom Bremertown}
- * Forked from {@link https://github.com/lstoll/socket-io-chat-heroku lstoll}
  */
 
 const frontends = require(`./lib/frontends`)
 const funs = require(`./lib/funs`)
 const sockets = require(`./lib/sockets`)
 
-/**
- * Create the chat application parts in the right order.
- */
 async function main () {
   try {
     let express = await frontends.expressInstance()
