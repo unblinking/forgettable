@@ -12,7 +12,7 @@ _Originally forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll
 
 ### Use it right now  
 
-Please **[open the Bremertown chat](http://www.bremertown.com)** and give it a try.  
+Please **[open the Bremertown chat](http://chat.bremertown.com)** and give it a try.  
 
 ### Deploy your own copy  
 
