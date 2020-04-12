@@ -1,4 +1,4 @@
-# 💬 Bremertown  
+# 💬 Bremertown Chatroom  
 
 Another chat.  
 
@@ -12,7 +12,9 @@ _Originally forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll
 
 ### Use it right now  
 
-Please **[open the Bremertown chat](http://chat.bremertown.com)** and give it a try.  
+Open the Bremertown Chatroom at **[chat.bremertown.com](http://chat.bremertown.com)** and give it a try.  
+
+Because this project is rarely used at this time, I can't afford to pay $7/month for a Heroku Hobby dyno. That is why the `chat.bremertown.com` subdomain does not use https. If you would like to access the chatroom using https, please go to **[https://bremertown.herokuapp.com/](https://bremertown.herokuapp.com/)**.
 
 ### Deploy your own copy  
 
@@ -22,6 +24,6 @@ Simply and easily deploy your very own copy of this chat system to Heroku using 
 
 ## About  
 
-Bremertown is another chat. Enter a nickname and begin chatting instantly. No password required, and no sign-up process.  
+Bremertown Chatroom is another chat. The goal of this chatroom project is to be simple but look nice. Enter a nickname and begin chatting instantly. No password required, no sign-up process, no database, no centrally saved chat history.  
 
 Inspired by the city of [Bremerton, WA, USA](http://www.ci.bremerton.wa.us/), but open to everyone.  
