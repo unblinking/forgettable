@@ -11,24 +11,24 @@
   "license": "MIT",
   "readme": "README.md",
   "engines": {
-    "node": "10.15.2"
+    "node": "12.16.2"
   },
   "dependencies": {
-    "express": "4.16.4",
+    "express": "4.17.1",
     "he": "1.2.0",
-    "helmet": "3.15.1",
-    "pug": "2.0.3",
-    "socket.io": "2.2.0"
+    "helmet": "3.22.0",
+    "pug": "2.0.4",
+    "socket.io": "2.3.0"
   },
   "devDependencies": {
-    "codecov": "3.2.0",
+    "codecov": "3.6.5",
     "env-test": "1.0.0",
-    "eslint": "5.15.0",
+    "eslint": "6.8.0",
     "intercept-stdout": "0.1.2",
-    "mocha": "6.0.2",
+    "mocha": "7.1.1",
     "mute": "2.0.6",
-    "npm-check-updates": "2.15.0",
-    "nyc": "13.3.0",
+    "npm-check-updates": "4.1.2",
+    "nyc": "15.0.1",
     "should": "13.2.3",
     "standard": "*"
   },
