@@ -12,9 +12,7 @@ _Originally forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll
 
 ### Use it right now  
 
-Open the Bremertown Chatroom at **[chat.bremertown.com](http://chat.bremertown.com)** and give it a try.  
-
-Because this project is rarely used at this time, I can't afford to pay $7/month for a Heroku Hobby dyno. That is why the `chat.bremertown.com` subdomain does not use https. If you would like to access the chatroom using https, please go to **[https://bremertown.herokuapp.com/](https://bremertown.herokuapp.com/)**.
+Open the Bremertown Chatroom at **[https://bremertown.herokuapp.com/](https://bremertown.herokuapp.com/)** and give it a try.  
 
 ### Deploy your own copy  
 
