@@ -1,5 +1,5 @@
 /**
- * Bremertown - Another chat.
+ * Forgettable - Another chat.
  * @author {@link https://github.com/jmg1138 jmg1138}
  */
 

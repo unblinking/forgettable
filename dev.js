@@ -3,7 +3,7 @@
 'use strict'
 
 /**
- * Starts the Bremertown chat in development mode.
+ * Starts the Forgettable chat in development mode.
  * @author {@link https://github.com/jmg1138 jmg1138}
  */
 

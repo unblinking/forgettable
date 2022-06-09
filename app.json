@@ -1,13 +1,12 @@
 {
-  "name": "bremertown chatroom",
+  "name": "forgettable",
   "description": "Another chat.",
   "keywords": [
-    "bremertown",
-    "bremerton",
+    "forgettable",
     "chat",
     "chatroom"
   ],
-  "website": "https://www.bremertown.com",
-  "repository": "https://github.com/nothingworksright/bremertown_chatroom",
+  "website": "https://github.com/nothingworksright/forgettable",
+  "repository": "https://github.com/nothingworksright/forgettable",
   "success_url": "/"
 }
