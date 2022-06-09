@@ -8,7 +8,7 @@ _Originally forked from [lstoll/socket-io-chat-heroku](https://github.com/lstoll
 
 ### Use it right now  
 
-Open the Forgettable chatroom at **[https://forgettable.herokuapp.com/](https://forgettable.herokuapp.com/)** and give it a try.  
+Open the Forgettable chatroom at **[https://forgettable-chat.herokuapp.com/](https://forgettable-chat.herokuapp.com/)** and give it a try.  
 
 ### Deploy your own copy  
 
