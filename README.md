@@ -18,4 +18,6 @@ Simply and easily deploy your very own copy of this chat system to Heroku using 
 
 ## About  
 
-Forgettable is another chatroom. The goal of this chatroom project is to be simple but look nice. Enter a nickname and begin chatting instantly. No password required, no sign-up process, no database, no centrally saved chat history (making the chat history forgettable).  
+Forgettable is an ephemeral chatroom.  
+
+The goals of this chatroom project are to remain simple and temporary. Enter a nickname and begin chatting instantly. No password required, no sign-up process, no database, and no centrally saved chat history (making the chat history ephemeral and forgettable).  
