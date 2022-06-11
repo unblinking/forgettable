@@ -4,7 +4,7 @@
   "description": "Another chat.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nothingworksright/forgettable.git"
+    "url": "https://github.com/unblinking/forgettable.git"
   },
   "main": "app.js",
   "author": "jmg1138 https://github.com/jmg1138",
